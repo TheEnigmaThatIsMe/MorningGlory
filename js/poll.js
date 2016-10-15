@@ -30,33 +30,42 @@ function load() {
      * @param {Object} rawResponse Raw response from the API.
      */
     function renderResults(response, rawResponse) {
-      console.log(response);
-      var el = document.getElementById('voterResults');
-      if (!response || response.error) {
-        el.appendChild(document.createTextNode(
-            'Error while trying to fetch polling place'));
-        return;
+      var res = $("#results");
+      res.html("");
+      console.log(res.html());
+      res.append('<tr id="contests"><th>Office</th></tr>');
+      for (var i = 0; i < response.contests.length; i++){
+        console.log(response.contests[i].office);
+        res.append('<tr><td>'+ response.contests[i].office + '</td></tr>');
       }
-      var normalizedAddress = response.normalizedInput.line1 + ' ' +
-          response.normalizedInput.city + ', ' +
-          response.normalizedInput.state + ' ' +
-          response.normalizedInput.zip;
-      if (response.pollingLocations.length > 0) {
-        var pollingLocation = response.pollingLocations[0].address;
-        var pollingAddress = pollingLocation.locationName + ', ' +
-            pollingLocation.line1 + ' ' +
-            pollingLocation.city + ', ' +
-            pollingLocation.state + ' ' +
-            pollingLocation.zip;
-        var normEl = document.createElement('strong');
-        normEl.appendChild(document.createTextNode(
-            'Polling place for ' + normalizedAddress + ': '));
-        el.appendChild(normEl);
-        el.appendChild(document.createTextNode(pollingAddress));
-      } else {
-        el.appendChild(document.createTextNode(
-            'Could not find polling place for ' + normalizedAddress));
-      }
+
+      // console.log(response);
+      // var el = document.getElementById('voterResults');
+      // if (!response || response.error) {
+      //   el.appendChild(document.createTextNode(
+      //       'Error while trying to fetch polling place'));
+      //   return;
+      // }
+      // var normalizedAddress = response.normalizedInput.line1 + ' ' +
+      //     response.normalizedInput.city + ', ' +
+      //     response.normalizedInput.state + ' ' +
+      //     response.normalizedInput.zip;
+      // if (response.pollingLocations.length > 0) {
+      //   var pollingLocation = response.pollingLocations[0].address;
+      //   var pollingAddress = pollingLocation.locationName + ', ' +
+      //       pollingLocation.line1 + ' ' +
+      //       pollingLocation.city + ', ' +
+      //       pollingLocation.state + ' ' +
+      //       pollingLocation.zip;
+      //   var normEl = document.createElement('strong');
+      //   normEl.appendChild(document.createTextNode(
+      //       'Polling place for ' + normalizedAddress + ': '));
+      //   el.appendChild(normEl);
+      //   el.appendChild(document.createTextNode(pollingAddress));
+      // } else {
+      //   el.appendChild(document.createTextNode(
+      //       'Could not find polling place for ' + normalizedAddress));
+      // }
     }
 
     function renderElections(response, rawResponse) {
