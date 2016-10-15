@@ -32,7 +32,8 @@ function load() {
      * @param {Object} rawResponse Raw response from the API.
      */
     function renderResults(response, rawResponse) {
-      var el = document.getElementById('results');
+      console.log(response);
+      var el = document.getElementById('voterResults');
       if (!response || response.error) {
         el.appendChild(document.createTextNode(
             'Error while trying to fetch polling place'));
@@ -77,7 +78,7 @@ function load() {
           var electionObj = {electionID: id, electionName: name, electionDate: electionDay};
           electionsArr[i] = electionObj;
         }
-        //var normEl = document.createElement('strong');
+
         var $table = $('#results');
         var tr = '<tr>'
         for(var i = 0; i < electionsArr.length; i++){
@@ -85,10 +86,6 @@ function load() {
           var name = electionsArr[i].electionName;
           var date = electionsArr[i].electionDate;
           $table.append('<tr style="cursor: pointer;" class="election-data" data-id="'+id+'"><td>'+ name +'</td><td>'+ date +'</td></tr>');
-          // normEl.appendChild(document.createTextNode(
-          //     'Election: '+ electionsArr[i].electionName + ' at ' + electionsArr[i].electionDate));
-          // normEl.appendChild(document.createElement('br'));
-          // el.appendChild(normEl);
         }
       } else {
         el.appendChild(document.createTextNode('Could not find elections'));
@@ -103,12 +100,16 @@ function load() {
      req.execute(callback);
     }
 
-    $('#results tr').click(function(){
-      var id = this.data('id');
+    $('body').on('click', '#results .election-data', function() {
+      var id = $(this).data('id');
+      $('#elID').val(id);
       $('#addressModal').openModal();
     });
-    $('#submitAddress').click(function() {
-      var address = $(this).prev().val();
+
+    $('body').on('click', '#submitAddress', function() {
+      var address = $('#address').val();
+      var id = $('#elID').val();
+      console.log(address, id);
       if(address != null && id != null){
         lookup(address, id, renderResults);
       }
