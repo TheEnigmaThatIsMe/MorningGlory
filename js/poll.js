@@ -83,6 +83,7 @@ function load() {
         var tr = '<tr>'
         for(var i = 0; i < electionsArr.length; i++){
           var id = electionsArr[i].electionID;
+          console.log(id);
           var name = electionsArr[i].electionName;
           var date = electionsArr[i].electionDate;
           $table.append('<tr style="cursor: pointer;" class="election-data" data-id="'+id+'"><td>'+ name +'</td><td>'+ date +'</td></tr>');
@@ -118,5 +119,4 @@ function load() {
   });
   //electionQuery(renderElections);
   //lookup('1263 Pacific Ave. Kansas City KS', electionId,renderResults);
->>>>>>> 4aaf4028f42934bb8d3b2b9fcfc4b4cf1ea6af71
 }
