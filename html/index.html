@@ -16,6 +16,7 @@
   <body>
     <div>
       <div id="failed-results"></div>
+      <div id="voterResults"></div>
       <table id="results">
         <tr class="election-header">
           <th class="election-name">Election</th>
@@ -27,10 +28,11 @@
     <div id="addressModal" class="modal">
       <div class="modal-content">
         <h4>Enter an address</h4>
-        <form id="addressForm">
-          Address: <input type="text" name="address">
+        <div id="addressDiv">
+          <input id="elID" name="id" value="" hidden/>
+          Address: <input id="address" type="text" name="address">
           <input id="submitAddress" class=" modal-action modal-close waves-effect waves-green btn-flat" type="submit" value="Submit">
-        </form>
+        </div>
       </div>
     </div>
   </body>
