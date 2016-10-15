@@ -7,6 +7,11 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="../css/stylesheet.css">
     <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
     <script src="../js/poll.js"></script>
     <script src="https://apis.google.com/js/client.js?onload=load"></script>
   </head>
@@ -75,7 +80,7 @@
               <th>Date</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="election-results">
             <tr>
               <td class="mdl-data-table__cell--non-numeric">Sample Election 1</td>
               <td>TRUMP THAT BITCH</td>
@@ -89,5 +94,26 @@
       </div>
     </div>
   <div id="results"></div>
+=======
+    <div>
+      <div id="failed-results"></div>
+      <table id="results">
+        <tr class="election-header">
+          <th class="election-name">Election</th>
+          <th class="election-date">Date</th>
+        </tr>
+      </table>
+    <div>
+    <!-- Modal Structure -->
+    <div id="addressModal" class="modal">
+      <div class="modal-content">
+        <h4>Enter an address</h4>
+        <form id="addressForm">
+          Address: <input type="text" name="address">
+          <input id="submitAddress" class=" modal-action modal-close waves-effect waves-green btn-flat" type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+>>>>>>> 4aaf4028f42934bb8d3b2b9fcfc4b4cf1ea6af71
   </body>
 </html>
