@@ -1,5 +1,3 @@
-
-//=======
 var apiKey = 'AIzaSyDvbDBbA_MaAoZIXkkczQ0eZhRXyt3dIz0';
 /**
  * Initialize the API client and make a request.
