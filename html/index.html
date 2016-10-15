@@ -6,10 +6,32 @@
     <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
     <script src="../js/poll.js"></script>
     <script src="https://apis.google.com/js/client.js?onload=load"></script>
   </head>
   <body>
-    <div id="results"></div>
+    <div>
+      <div id="failed-results"></div>
+      <table id="results">
+        <tr class="election-header">
+          <th class="election-name">Election</th>
+          <th class="election-date">Date</th>
+        </tr>
+      </table>
+    <div>
+    <!-- Modal Structure -->
+    <div id="addressModal" class="modal">
+      <div class="modal-content">
+        <h4>Enter an address</h4>
+        <form id="addressForm">
+          Address: <input type="text" name="address">
+          <input id="submitAddress" class=" modal-action modal-close waves-effect waves-green btn-flat" type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
   </body>
 </html>
