@@ -4,6 +4,8 @@
     <title>Morning Glory Political Information</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="../css/stylesheet.css">
     <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- Compiled and minified CSS -->
@@ -13,26 +15,90 @@
     <script src="../js/poll.js"></script>
     <script src="https://apis.google.com/js/client.js?onload=load"></script>
   </head>
+
   <body>
+    <!--Navigation / Menu Toolbar-->
+    <div class="back-layout-transparent mdl-layout mdl-js-layout">
+      <header class="mdl-layout__header mdl-layout__header--transparent">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">Morning Glory</span>
+          <div class="mdl-layout-spacer"></div>
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="#">Home</a>
+            <a class="mdl-navigation__link" href="#">About</a>
+            <a class="mdl-navigation__link" href="#">Contact</a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Morning Glory</span>
+        <nav class="mdl-navigation">
+          <!--a class="mdl-navigation__link" href="#">This</a>
+          <a class="mdl-navigation__link" href="#">is</a>
+          <a class="mdl-navigation__link" href="#">A</a>
+          <a class="mdl-navigation__link" href="#">Test</a-->
+        </nav>
+      </div>
+    </div>
+    <!-- End of Nav -->
+
+    <!--div class="mdl-layout__container">
+        <div class="mdl-card mdl-cell mdl-cell--4-col">
+          <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp">
+            <thead>
+              <tr>
+                <th class="mdl-data-table__cell--non-numeric">Election</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="mdl-data-table__cell--non-numeric">Sample Election 1</td>
+                <td>TRUMP THAT BITCH</td>
+              </tr>
+              <tr>
+                <td class="mdl-data-table__cell--non-numeric">Sample Election 2</td>
+                <td>November 8, 2016</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div-->
+    <div class="mdl-card mdl-shadow--2dp demo-card-wide">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Choose an Election</h2>
+      </div>
+      <!--div class="mdl-card__supporting-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Mauris sagittis pellentesque lacus eleifend lacinia...
+      </div-->
+      <div class="mdl-card__actions mdl-card--border">
+        <table id="results" class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--4dp">
+            <tr class="election-header">
+              <th class="mdl-data-table__cell--non-numeric election-name">Election</th>
+              <th class="election-date">Date</th>
+            </tr>
+        </table>
+      </div>
+    </div>
+  <!--div id="results"></div>
     <div>
       <div id="failed-results"></div>
-      <div id="voterResults"></div>
       <table id="results">
         <tr class="election-header">
           <th class="election-name">Election</th>
           <th class="election-date">Date</th>
         </tr>
       </table>
-    <div>
+    <div-->
     <!-- Modal Structure -->
     <div id="addressModal" class="modal">
       <div class="modal-content">
         <h4>Enter an address</h4>
-        <div id="addressDiv">
-          <input id="elID" name="id" value="" hidden/>
-          Address: <input id="address" type="text" name="address">
+        <form id="addressForm">
+          Address: <input type="text" name="address">
           <input id="submitAddress" class=" modal-action modal-close waves-effect waves-green btn-flat" type="submit" value="Submit">
-        </div>
+        </form>
       </div>
     </div>
   </body>

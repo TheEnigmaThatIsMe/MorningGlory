@@ -1,3 +1,5 @@
+
+//=======
 var apiKey = 'AIzaSyDvbDBbA_MaAoZIXkkczQ0eZhRXyt3dIz0';
 /**
  * Initialize the API client and make a request.
@@ -81,6 +83,7 @@ function load() {
         var tr = '<tr>'
         for(var i = 0; i < electionsArr.length; i++){
           var id = electionsArr[i].electionID;
+          console.log(id);
           var name = electionsArr[i].electionName;
           var date = electionsArr[i].electionDate;
           $table.append('<tr style="cursor: pointer;" class="election-data" data-id="'+id+'"><td>'+ name +'</td><td>'+ date +'</td></tr>');
